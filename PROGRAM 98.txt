@@ -1,0 +1,15 @@
+# Open the file in write mode and write the initial content
+f = open('myfile.txt', 'w')
+f.write('My first file')
+f.close()
+
+# Open the file in append mode and append new content
+f = open('myfile.txt', 'a')
+f.write('\nWelcome Every one')
+f.write('\nAppend Mode')
+f.close()
+
+# Open the file in read mode and display the content
+f = open('myfile.txt', 'r')
+print(f.read())
+f.close()

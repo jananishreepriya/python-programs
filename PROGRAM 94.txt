@@ -1,0 +1,14 @@
+def no_notes(a):
+    Q = [500, 200, 100, 50, 20, 10]
+    x = 0
+    for i in range(6):
+        q = Q[i]
+        x += int(a / q)
+        a = int(a % q)
+    if a > 0:
+        x = -1
+    return x
+
+# Test cases
+print(no_notes(500))   # Expected output: 1 (one 500 note)
+print(no_notes(560))   # Expected output: 3 (one 500, one 50, one 10)
