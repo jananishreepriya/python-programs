@@ -1,0 +1,13 @@
+def rev(inputString):
+    return inputString[::-1]
+def isPalindrome(inputString):
+    reverseString=rev(inputString)
+    if(inputString==reverseString):
+        return true
+    return false
+s=input("enter a string:")
+result=isPalindrome(s)
+if result==1:
+    print("the string is palindrome")
+else:
+    print("the string is not palindrome")

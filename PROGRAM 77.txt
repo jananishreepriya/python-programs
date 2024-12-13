@@ -1,0 +1,6 @@
+numbers=[3,4,1,9,6,2,8]
+print(numbers)
+x=int(input("enter the numbers to be inserted:"))
+y=int(input("enter the position:"))
+numbers.insert(y,x)
+print(numbers)
