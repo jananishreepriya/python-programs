@@ -1,0 +1,7 @@
+import re
+ip = "216.08.094.196"
+
+# Update the regex to only match periods followed by one or more zeros, but keep the other digits intact.
+string = re.sub(r'\.(0+)(?=\d)', '.', ip)
+
+print(string)

@@ -1,0 +1,45 @@
+from __future__ import annotations
+
+def rec_insertion_sort(collection: list, n: int):
+    # Base case: if the list has one or no elements, it is already sorted
+    if n <= 1:
+        return
+    
+    # Recursively sort the first n-1 elements
+    rec_insertion_sort(collection, n - 1)
+    
+    # Insert the nth element into the sorted portion of the list
+    insert_next(collection, n - 1)
+
+def insert_next(collection: list, index: int):
+    # Check if index is out of bounds or if elements are in ascending order
+    if index <= 0 or collection[index - 1] <= collection[index]:
+        return
+    
+    # Swap adjacent elements since they are not in ascending order
+    collection[index - 1], collection[index] = collection[index], collection[index - 1]
+    
+    # Recursively call insert_next to continue inserting the element into the sorted section
+    insert_next(collection, index - 1)
+
+# Test cases
+nums = [4, 3, 5, 1, 2]
+print("\nOriginal list:")
+print(nums)
+print("After applying Recursive Insertion Sort the said list becomes:")
+rec_insertion_sort(nums, len(nums))
+print(nums)
+
+nums = [5, 9, 10, 3, -4, 5, 178, 92, 46, -18, 0, 7]
+print("\nOriginal list:")
+print(nums)
+print("After applying Recursive Insertion Sort the said list becomes:")
+rec_insertion_sort(nums, len(nums))
+print(nums)
+
+nums = [1.1, 1, 0, -1, -1.1, .1]
+print("\nOriginal list:")
+print(nums)
+print("After applying Recursive Insertion Sort the said list becomes:")
+rec_insertion_sort(nums, len(nums))
+print(nums)

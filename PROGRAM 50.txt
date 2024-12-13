@@ -1,0 +1,26 @@
+import sqlite3
+
+try:
+    # Connect to SQLite database (or create it if it doesn't exist)
+    sqlite_Connection = sqlite3.connect('temp.db')
+    conn = sqlite_Connection.cursor()
+    print("\nDatabase created and connected to SQLite.")
+
+    # SQLite query to get the version of SQLite database
+    sqlite_select_Query = "SELECT sqlite_version();"
+    conn.execute(sqlite_select_Query)
+
+    # Fetch the result of the query
+    record = conn.fetchall()
+    print("\nSQLite Database Version is: ", record)
+
+    # Close the cursor
+    conn.close()
+
+except sqlite3.Error as error:
+    print("\nError while connecting to sqlite", error)
+
+finally:
+    if (sqlite_Connection):
+        sqlite_Connection.close()
+        print("\nThe SQLite connection is closed.")

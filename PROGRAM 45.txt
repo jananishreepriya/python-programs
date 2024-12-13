@@ -1,0 +1,15 @@
+import re
+
+def is_allowed_specific_char(string):
+    # Regular expression to find any character that is NOT a letter or number
+    charRe = re.compile(r'[^a-zA-Z0-9]')
+    
+    # Search for any non-alphanumeric character
+    match = charRe.search(string)
+    
+    # If a match is found, it means there is an invalid character (return False)
+    # If no match is found, return True (string is valid)
+    return not bool(match)
+
+print(is_allowed_specific_char("ABCDEFabcdef123450"))  # Expected: True (valid string)
+print(is_allowed_specific_char("*&%@#!}{"))  # Expected: False (contains invalid characters)

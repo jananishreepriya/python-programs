@@ -1,0 +1,28 @@
+class RomanSolution:
+    @staticmethod
+    def int_to_Roman(num):
+        # Roman numeral values and corresponding symbols
+        val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        syb = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        
+        # Initialize result variable
+        roman_num = ""
+        
+        # Check if input is valid
+        if num < 1 or num > 3999:
+            return "Enter a number between 1 and 3999!"
+        
+        # Loop through each value and symbol pair
+        i = 0
+        while num > 0:
+            if num >= val[i]:
+                roman_num += syb[i]  # Add the corresponding symbol to the result
+                num -= val[i]  # Decrease the number by the value
+            else:
+                i += 1  # Move to the next value/symbol pair
+
+        return roman_num
+
+# Taking input from the user
+n = int(input("Enter a number: "))
+print("Roman numeral of the given number is:", RomanSolution.int_to_Roman(n))
