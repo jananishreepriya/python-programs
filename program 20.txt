@@ -1,3 +1,0 @@
-l=[2,58,95,999,95,32,15,95,7,45]
-n=int(input("enter the number:"))
-print("the frequence of number",n,"is",l.count(n))
